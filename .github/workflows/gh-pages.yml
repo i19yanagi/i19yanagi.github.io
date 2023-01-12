@@ -1,0 +1,33 @@
+name: build and deploy gh pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Build
+        run: |
+          touch .env
+          echo VITE_SECRET_KEY =${{ secrets.VITE_SECRET_KEY }} >> .env
+          mkdir ./dist
+          npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

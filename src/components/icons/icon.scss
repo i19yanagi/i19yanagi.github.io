@@ -1,0 +1,12 @@
+@use "../../styles/color";
+svg {
+  stroke: color.$light-font-color;
+  opacity: 0.8;
+  @media (prefers-color-scheme: dark) {
+    stroke: color.$dark-font-color;
+  }
+  &:hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
+}

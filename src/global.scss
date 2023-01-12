@@ -1,0 +1,62 @@
+@use "styles/color";
+$qwik-dark-blue: #006ce9;
+$qwik-light-blue: #18b6f6;
+$qwik-dark-purple: #713fc2;
+$qwik-light-purple: #ac7ff4;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: color.$light-bg;
+  font-family: Nunito, "M PLUS Rounded 1c", sans-serif;
+  padding: 20px 20px 40px 20px;
+  color: color.$light-font-color;
+  transition: 0.5s;
+  @media (prefers-color-scheme: dark) {
+    background-color: color.$dark-bg;
+    color: color.$dark-font-color;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    border-bottom: solid 2px color.$light-font-color;
+    @media (prefers-color-scheme: dark) {
+      border-bottom: solid 2px color.$dark-font-color;
+    }
+    h1,
+    h2 {
+      margin: 0 0 5px 0;
+    }
+    .wrap {
+      padding: 20px;
+    }
+    ul {
+      list-style-type: square;
+      margin: 5px 0 30px 0;
+      padding-left: 25px;
+      li {
+        padding: 8px 0;
+        &::marker {
+          color: $qwik-light-blue;
+        }
+      }
+    }
+    a,
+    a:visited {
+      color: color.$light-link-color;
+      &:hover {
+        text-decoration: none;
+      }
+      @media (prefers-color-scheme: dark) {
+        color: color.$dark-link-color;
+      }
+    }
+  }
+  footer {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8em;
+  }
+}
