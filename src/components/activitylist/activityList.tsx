@@ -35,18 +35,8 @@ export default component$(() => {
 });
 
 export const getActivities = async (): Promise<Action[]> => {
-  const API_URL = "https://api.github.com/users/i19yanagi/events/public";
-  const headers = {
-    Authorization: `Bearer ${import.meta.env.VITE_SECRET_KEY}`,
-    "X-GitHub-Api-Version": "2022-11-28",
-    Accept: "application/vnd.github+json",
-  };
-  const res = await axios.get(API_URL, {
-    params: {
-      per_page: 10,
-    },
-    headers: headers,
-  });
+  const API_URL = "https://portfolio-api-gryf.onrender.com/event";
+  const res = await axios.get(API_URL);
   return Array.isArray(res.data)
     ? res.data.map((event: Event): Action => {
         return {
