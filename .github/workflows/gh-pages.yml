@@ -24,7 +24,7 @@ jobs:
           touch .env
           echo VITE_SECRET_KEY =${{ secrets.VITE_SECRET_KEY }} >> .env
           mkdir ./dist
-          npm run build
+          npm run build.server
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
