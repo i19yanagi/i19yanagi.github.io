@@ -4,6 +4,7 @@ import styles from "./index.scss?inline";
 import ActivityList from "~/components/activitylist/activityList";
 import GithubLogo from "~/components/icons/github";
 import TwitterLogo from "~/components/icons/twitter";
+import SkillList from "~/components/skillList/skillList";
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -31,16 +32,7 @@ export default component$(() => {
 
       <section class="skill">
         <h2>Skills</h2>
-        <article>
-          <h3>Frontend</h3>
-          <ul class="skill_list">
-            <li>TypeScript</li>
-            <li>Rust</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Backend</h3>
-        </article>
+        <SkillList />
       </section>
 
       <section class="activity">
