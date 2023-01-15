@@ -15,19 +15,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install pnpm
-        id: pnpm-install
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
 
       - name: Install dependencies
-        run: pnpm i
+        run: npm i
 
       - name: Build
         run: | 
           mkdir ./dist
-          pnpm run build.server
+          npm run build.server
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
