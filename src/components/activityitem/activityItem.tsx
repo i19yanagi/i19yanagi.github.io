@@ -6,7 +6,8 @@ import dayjs from "dayjs";
 interface ActivityProps {
   action: Action;
 }
-export default component$((props: ActivityProps) => {
+
+export default component$<ActivityProps>((props) => {
   useStylesScoped$(styles);
   return (
     <>
