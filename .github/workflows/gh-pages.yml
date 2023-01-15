@@ -25,9 +25,7 @@ jobs:
         run: pnpm i --frozen-lockfile
 
       - name: Build
-        run: |
-          touch .env
-          echo VITE_SECRET_KEY =${{ secrets.VITE_SECRET_KEY }} >> .env
+        run: | 
           mkdir ./dist
           npm run build.server
 

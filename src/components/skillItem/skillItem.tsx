@@ -11,7 +11,6 @@ export default component$<SkillItemProps>((props) => {
   useStylesScoped$(styles);
   return (
     <>
-      {}
       <Logo lang={props.skill.lang} />
     </>
   );
